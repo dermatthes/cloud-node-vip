@@ -10,7 +10,7 @@ sed -i --follow-symlinks "s|{{ keepalived_interface }}|$KEEPALIVED_INTERFACE|g" 
 ## For development only:
 
 
-CMD="/usr/sbin/keepalived -f /etc/keepalived/keepalived.conf --dont-fork --log-console --vrrp"
+CMD="/usr/sbin/keepalived -f /etc/keepalived/keepalived.conf --dont-fork --log-console --vrrp --release-vips"
 
 if [ $DEVMODE = '1' ]
 then
