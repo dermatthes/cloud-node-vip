@@ -11,6 +11,9 @@ RUN apt-get install -y iputils-ping host telnet vim
 
 ## To provide on startup:
 
+ENV KEEPALIVED_PRIORITY=100
+ENV KEEPALIVED_INTERFACE="eth0"
+
 
 ADD cfg/ /
 RUN chmod 755 /opt/start_services.sh
