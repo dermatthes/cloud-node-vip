@@ -10,5 +10,5 @@ It provides
 ## Calling
 
 ```
-docker run --net local --privileged
+docker run --cap-add=NET_ADMIN --net=host -e KEEPALIVED_PRIORITY=5 -e KEEPALIVED_INTERFACE=enp5s0 -it dermatthes/cloud-node-vip
 ```
