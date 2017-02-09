@@ -3,7 +3,7 @@ FROM ubuntu:16.04
 
 MAINTAINER Matthias Leuffen version: 0.1
 
-RUN apt-get update && apt-get install -y php7.0 keepalived
+RUN apt-get update && apt-get install -y php7.0 keepalived libipset3
 # && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ## For debugging
@@ -11,6 +11,7 @@ RUN apt-get install -y iputils-ping host telnet vim
 
 ## To provide on startup:
 
+ENV DEVMODE=0
 ENV KEEPALIVED_PRIORITY=100
 ENV KEEPALIVED_INTERFACE="eth0"
 

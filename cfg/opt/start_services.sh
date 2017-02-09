@@ -8,6 +8,16 @@ sed -i --follow-symlinks "s|{{ keepalived_interface }}|$KEEPALIVED_INTERFACE|g" 
 
 
 ## For development only:
-# /bin/bash
 
-/usr/sbin/keepalived -f /etc/keepalived/keepalived.conf --dont-fork --log-console
+
+CMD="/usr/sbin/keepalived -f /etc/keepalived/keepalived.conf --dont-fork --log-console --vrrp"
+
+if [ $DEVMODE = '1' ]
+then
+    echo "Devel-mode. Command to run:"
+    echo $CMD
+    echo ""
+    /bin/bash
+else
+    exec $CMD
+fi
