@@ -1,5 +1,5 @@
 # A basic apache server. To use either add or bind mount content under /var/www
-FROM ubuntu:16.04
+FROM ubuntu:17.04
 
 MAINTAINER Matthias Leuffen version: 0.1
 
@@ -13,7 +13,7 @@ RUN apt-get install -y iputils-ping host telnet vim
 
 ENV DEVMODE=0
 ENV KEEPALIVED_PRIORITY=100
-ENV KEEPALIVED_INTERFACE="eth0"
+ENV KEEPALIVED_INTERFACE="br0"
 ENV VIP_IP=10.19.0.10/24
 ENV VIP_GW=10.19.0.1
 
