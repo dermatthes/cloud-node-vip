@@ -5,8 +5,8 @@
 
 sed -i --follow-symlinks "s|{{ keepalived_priority }}|$KEEPALIVED_PRIORITY|g" /etc/keepalived/keepalived.conf
 sed -i --follow-symlinks "s|{{ keepalived_interface }}|$KEEPALIVED_INTERFACE|g" /etc/keepalived/keepalived.conf
-
-
+sed -i --follow-symlinks "s|{{ vip_ip }}|$VIP_IP|g" /etc/keepalived/keepalived.conf
+sed -i --follow-symlinks "s|{{ vip_gw }}|$VIP_GW|g" /etc/keepalived/keepalived.conf
 ## For development only:
 
 
